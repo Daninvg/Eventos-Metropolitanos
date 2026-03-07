@@ -27,8 +27,7 @@ ejecutar
 ```
 composer install
 npm install
-para la ejecucion correcta de css
-npm run build
+para la ejecucion correcta de css: npm run build
 php artisan key:generate
 php artisan migrate
 ```
