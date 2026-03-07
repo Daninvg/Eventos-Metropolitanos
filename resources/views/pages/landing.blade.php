@@ -17,6 +17,7 @@
             Crea, gestiona y promociona tus eventos con nuestra plataforma intuitiva y sencilla.
             somos el lugar ideal para organizar tus eventos de manera eficiente y sin complicaciones.
             somos los mediadores para que tu evento se realize de forma segura y confiable, con una amplia gama de servicios para garantizar el éxito de tu evento.
+            mas informacion en el manual de usuario
         </p>
 
         <button class="mt-6 px-6 py-3 bg-red-500 text-white rounded-bl-3xl hover:bg-yellow-500 transition-colors">
