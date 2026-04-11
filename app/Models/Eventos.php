@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\EventoEstado;
 use Illuminate\Database\Eloquent\Model;
 
 class Eventos extends Model
@@ -17,5 +18,12 @@ class Eventos extends Model
     public function relacionUsuarios()
     {
         return $this->belongsTo(User::class);
+    }
+
+    protected function casts(): array
+    {
+        return [
+            'estado' => EventoEstado::class,
+        ];
     }
 }
