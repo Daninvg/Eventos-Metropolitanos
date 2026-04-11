@@ -1,17 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Enums\UserRole;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
-       /**
+    /**
      * Display a listing of the resource.
      */
     public function index()
     {
         $user = User::all();
+
         return view('user.index', compact('user'));
     }
 
@@ -31,10 +35,11 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required|max: 20',
             'email' => 'required|email |max: 256',
-            'password' => 'required|max: 15| string'
+            'password' => 'required|max: 15| string',
+            'role' => ['nullable', Rule::enum(UserRole::class)],
         ]);
         $user = User::create($request->all());
-        
+
         return redirect()->route('user.index', compact('user'));
     }
 
@@ -43,7 +48,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('user.show',compact('user'));
+        return view('user.show', compact('user'));
     }
 
     /**
@@ -62,12 +67,16 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required|max: 20',
             'email' => 'required|email |max: 256',
-            'password' => 'required|max: 15| string'
+            'password' => 'required|max: 15| string',
+            'role' => ['nullable', Rule::enum(UserRole::class)],
         ]);
 
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = $request->password;
+        if ($request->filled('role')) {
+            $user->role = $request->role;
+        }
         $user->save();
 
         return redirect()->route('user.index');
