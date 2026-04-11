@@ -12,8 +12,8 @@ class EventosController extends Controller
      */
     public function index()
     {
-        //$eventos = Eventos::all();
-        //return view('eventos.indexEventos')->with('eventos');
+        // $eventos = Eventos::all();
+        // return view('eventos.indexEventos')->with('eventos');
     }
 
     /**
@@ -21,7 +21,7 @@ class EventosController extends Controller
      */
     public function create()
     {
-        //usar livewire
+        // usar livewire
     }
 
     /**
@@ -29,7 +29,7 @@ class EventosController extends Controller
      */
     public function store(Request $request)
     {
-        //livewire?
+        // livewire?
     }
 
     /**
@@ -37,7 +37,7 @@ class EventosController extends Controller
      */
     public function show(Eventos $eventos)
     {
-        //return view('eventos.showEventos', compact('eventos'));
+        // return view('eventos.showEventos', compact('eventos'));
     }
 
     /**
@@ -45,7 +45,7 @@ class EventosController extends Controller
      */
     public function edit(Eventos $eventos)
     {
-        //return view('eventos.editEventos', compact('eventos'));
+        // return view('eventos.editEventos', compact('eventos'));
     }
 
     /**
@@ -53,10 +53,10 @@ class EventosController extends Controller
      */
     public function update(Request $request, Eventos $eventos)
     {
-        //Implementar roles de usuario <--
-        /** 
-         * Una vez implementado los roles de usuario retomaremos esta parte del controlador 
-         */ 
+        // Implementar roles de usuario <--
+        /**
+         * Una vez implementado los roles de usuario retomaremos esta parte del controlador
+         */
     }
 
     /**
@@ -65,8 +65,9 @@ class EventosController extends Controller
     public function destroy(Eventos $eventos)
     {
         $eventos->delete();
+
         return redirect()->route('')->with([
-            'message' => 'Evento: ', $eventos->nombre_evento, 'eliminado' 
+            'message' => 'Evento: ', $eventos->nombre_evento, 'eliminado',
         ]);
     }
 }

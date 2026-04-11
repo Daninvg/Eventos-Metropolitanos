@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Eventos extends Model
 {
-    protected $table = "compupapu";
+    protected $table = 'compupapu';
 
     protected $fillable = [
         'descripcion',
         'imagen',
-        'estado'
+        'estado',
     ];
 
     public function relacionUsuarios()

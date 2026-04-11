@@ -28,7 +28,7 @@ return new class extends Migration
             }
 
             if ($driver === 'pgsql') {
-                DB::statement("ALTER TABLE eventos ALTER COLUMN estado TYPE VARCHAR(20) USING estado::text");
+                DB::statement('ALTER TABLE eventos ALTER COLUMN estado TYPE VARCHAR(20) USING estado::text');
                 DB::statement("ALTER TABLE eventos ALTER COLUMN estado SET DEFAULT 'proximamente'");
             }
 

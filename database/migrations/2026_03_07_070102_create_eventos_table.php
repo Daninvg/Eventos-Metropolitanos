@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('eventos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_usuario')->nullable()->constrained('users');
-            $table->dateTime('fecha_inicio', precision:0);
-            $table->dateTime('fecha_fin', precision:0);
+            $table->dateTime('fecha_inicio', precision: 0);
+            $table->dateTime('fecha_fin', precision: 0);
             $table->boolean('estado')->default(false);
             $table->string('nombre_evento');
             $table->text('descripcion');
